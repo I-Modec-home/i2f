@@ -1,0 +1,29 @@
+.carousel.slide id="carousel-example-generic" data-ride="carousel"
+  / 指标
+  ol.carousel-indicators
+    li.active data-target="#carousel-example-generic" data-slide-to="0"
+    li data-target="#carousel-example-generic" data-slide-to="1"
+    li data-target="#carousel-example-generic" data-slide-to="2"
+  /包装
+  .carousel-inner role="listbox"
+    .item.active
+      img.img-responsive src="/assets/11.jpg" alt=""
+      .carousel-caption
+    .item
+      img.img-responsive src="/assets/22.jpg" alt=""
+      .carousel-caption
+    .item
+      img.img-responsive src="/assets/33.jpg" alt=""
+      .carousel-caption
+javascript:
+  $(document).ready(function(){
+    $(".img-responsive").width($(window).width());
+    $(".img-responsive").height($(window).height()/3);
+    $('.carousel').carousel({
+      interval: 2000
+    });
+  });
+  $(window).resize(function() {
+    $(".img-responsive").width($(window).width());
+    $(".img-responsive").height($(window).height()/3);
+  });
